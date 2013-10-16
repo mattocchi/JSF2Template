@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<!-- <title><h:outputText value="#{softwareui.title}" /></title> -->
+	<title>#{not empty title ? title : softwareui.title}</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<link rel="shortcut icon" href="favicon.ico" />
+	<link rel="icon" href="favicon.ico" />
+
+	<!-- http://twitter.github.io/bootstrap/getting-started.html#html-template -->
+
+	<!-- Framework CSS -->
+	<h:outputStylesheet library="bootstrap/css" name="bootstrap.min.css" media="screen" />
+	<h:outputStylesheet library="bootstrap/css" name="bootstrap-responsive.min.css" media="screen" />
+
+	<h:outputStylesheet library="bootstrap/fam-icons" name="fam-icons.css" media="screen" />
+
+	<h:outputStylesheet library="bootstrap/datepicker" name="datepicker.css" media="screen" />
+	<!-- <h:outputStylesheet library="bootstrap/wysihtml5" name="bootstrap-wysihtml5.css" media="screen" /> -->
+	<!-- <h:outputStylesheet library="bootstrap/combobox" name="bootstrap-combobox.css" media="screen" /> -->
+	<h:outputStylesheet library="bootstrap/select2-3.4.2" name="select2.css" media="screen" />
+	<h:outputStylesheet library="bootstrap/bootstrap-switch-master/static/stylesheets" name="bootstrap-switch.css" media="screen" />
+
+	<h:outputStylesheet library="css" name="default.css" />
+
+</h:head>
+<h:body>
+
+	<ui:insert name="body">Default body</ui:insert>
+
+	<!-- 	<h:form id="mainForm" prependId="false">
+
+		<ui:insert name="menu">
+			<ui:include src="/templates/menu.xhtml" />
+		</ui:insert>
+
+		<ui:insert name="content">Default content</ui:insert>
+
+	</h:form> -->
+
+	<h:outputScript library="jquery" name="jquery-1.10.2.js"></h:outputScript>
+	<h:outputScript library="bootstrap/js" name="bootstrap.min.js"></h:outputScript>
+
+	<h:outputScript library="bootstrap/datepicker" name="bootstrap-datepicker.js"></h:outputScript>
+	<!-- <h:outputScript library="bootstrap/wysihtml5" name="bootstrap-wysihtml5.js"></h:outputScript> -->
+	<!-- <h:outputScript library="bootstrap/combobox" name="bootstrap-combobox.js"></h:outputScript> -->
+	<h:outputScript library="bootstrap/select2-3.4.2" name="select2.min.js"></h:outputScript>
+	<h:outputScript library="bootstrap/select2-3.4.2" name="select2_locale_lt.js"></h:outputScript>
+	<h:outputScript library="bootstrap/bootstrap-switch-master/static/js" name="bootstrap-switch.min.js"></h:outputScript>
+
+
+	<h:outputScript library="bootstrap" name="load-widget.js"></h:outputScript>
+</h:body>
+</html>
+

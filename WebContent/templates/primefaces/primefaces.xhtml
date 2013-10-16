@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title><h:outputText value="#{softwareui.title}" /></title>
+
+	<link rel="shortcut icon" href="#{request.contextPath}/favicon.ico" />
+	<link rel="icon" href="#{request.contextPath}/favicon.ico" />
+
+	<!-- <h:outputStylesheet library="primefaces" name="varie.css" /> -->
+	<!-- <h:outputStylesheet library="primefaces" name="prime-default.css" /> -->
+
+	<!-- http://twitter.github.io/bootstrap/getting-started.html#html-template -->
+
+	<!-- Framework CSS -->
+	<h:outputStylesheet library="bootstrap/css" name="bootstrap.min.css" media="screen" />
+	<h:outputStylesheet library="bootstrap/css" name="bootstrap-responsive.min.css" media="screen" />
+
+	<h:outputStylesheet library="bootstrap/fam-icons" name="fam-icons.css" media="screen" />
+
+	<h:outputStylesheet library="bootstrap/datepicker" name="datepicker.css" media="screen" />
+	<!-- <h:outputStylesheet library="bootstrap/wysihtml5" name="bootstrap-wysihtml5.css" media="screen" /> -->
+	<!-- <h:outputStylesheet library="bootstrap/combobox" name="bootstrap-combobox.css" media="screen" /> -->
+	<h:outputStylesheet library="bootstrap/select2-3.4.2" name="select2.css" media="screen" />
+
+	<h:outputStylesheet library="bootstrap/bootstrap-switch-master/static/stylesheets" name="bootstrap-switch.css" media="screen" />
+
+	<h:outputStylesheet library="css" name="default.css" />
+</h:head>
+<h:body>
+	<ui:insert name="body">Default body</ui:insert>
+
+	<h:outputScript library="primefaces" name="jquery/jquery.js" />
+	<!-- <h:outputScript library="jquery" name="jquery-1.9.1.min.js"></h:outputScript> -->
+	<!-- 	<script type="text/javascript">
+		// $.noConflict();
+		// Code that uses other library's $ can follow here.
+		$ = jQuery;
+	</script> -->
+	<h:outputScript library="bootstrap/js" name="bootstrap.min.js"></h:outputScript>
+
+	<h:outputScript library="bootstrap/datepicker" name="bootstrap-datepicker.js"></h:outputScript>
+	<!-- <h:outputScript library="bootstrap/wysihtml5" name="bootstrap-wysihtml5.js"></h:outputScript> -->
+	<!-- <h:outputScript library="bootstrap/combobox" name="bootstrap-combobox.js"></h:outputScript> -->
+	<h:outputScript library="bootstrap/select2-3.4.2" name="select2.min.js"></h:outputScript>
+	<h:outputScript library="bootstrap/select2-3.4.2" name="select2_locale_it.js"></h:outputScript>
+
+	<h:outputScript library="bootstrap/bootstrap-switch-master/static/js" name="bootstrap-switch.min.js"></h:outputScript>
+
+	<h:outputScript library="bootstrap" name="load-widget.js"></h:outputScript>
+</h:body>
+</html>
+

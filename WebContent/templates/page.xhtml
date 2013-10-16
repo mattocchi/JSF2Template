@@ -1,0 +1,19 @@
+<ui:composition template="/templates/bootstrap.xhtml" xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:widget="http://java.sun.com/jsf/composite/widget">
+
+	<ui:define name="body">
+		<ui:param name="title" value="#{title}" />
+		
+		<h:form id="mainForm" prependId="false">
+
+			<ui:insert name="menu">
+				<ui:include src="/templates/menu.xhtml" />
+			</ui:insert>
+
+			<ui:insert name="content">Default content</ui:insert>
+
+		</h:form>
+	</ui:define>
+
+</ui:composition>

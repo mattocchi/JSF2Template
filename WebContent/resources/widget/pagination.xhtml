@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" xmlns:composite="http://java.sun.com/jsf/composite">
+
+<composite:interface>
+	<composite:attribute name="backbean" type="it.attocchi.studio74.online.jsf.PageBaseListS74" required="true" />
+	<composite:attribute name="filter" type="it.attocchi.jpa2.JPAEntityFilter" required="true" />
+	<!--
+	<composite:attribute name="actionPageNext" method-signature="java.lang.String action()" />
+	<composite:attribute name="actionPagePrev" method-signature="java.lang.String action()" />
+	-->
+</composite:interface>
+
+<composite:implementation>
+
+	<h:panelGroup rendered="#{cc.attrs.filter.currentPage > 0}">
+		<div class="pagination pagination-centered">
+			<ul>
+
+				<li class="#{(cc.attrs.filter.currentPage > 1) ? '' : 'disabled'}">
+					<span>
+						<h:commandLink value="&laquo; Precedente" action="#{cc.attrs.backbean.actionPagePrev }" rendered="#{cc.attrs.filter.currentPage gt 1}"></h:commandLink>
+						<h:outputText value="&laquo; Precedente" rendered="#{cc.attrs.filter.currentPage le 1}"></h:outputText>
+					</span>
+				</li>
+
+				<li class="">
+					<span>
+						<h:outputText value="Pagina #{cc.attrs.filter.currentPage} di #{cc.attrs.filter.totalPages(cc.attrs.backbean.count)}"></h:outputText>
+					</span>
+				</li>
+
+				<li class="#{(((cc.attrs.filter.currentPage + 1) * cc.attrs.filter.limit) + cc.attrs.filter.limit) le cc.attrs.backbean.count ? '' : 'disabled'}">
+					<span>
+						<h:commandLink value="Successiva &raquo;" action="#{cc.attrs.backbean.actionPageNext }" rendered="#{(((cc.attrs.filter.currentPage + 1) * cc.attrs.filter.limit) + cc.attrs.filter.limit) lt cc.attrs.backbean.count}"></h:commandLink>
+						<h:outputText value="Successiva &raquo;" rendered="#{(((cc.attrs.filter.currentPage + 1) * cc.attrs.filter.limit) + cc.attrs.filter.limit) ge cc.attrs.backbean.count}"></h:outputText>
+
+					</span>
+				</li>
+
+			</ul>
+		</div>
+	</h:panelGroup>
+
+</composite:implementation>
+
+
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<head>
+</head>
+<body>
+	<ui:composition>
+
+		<div class="navbar navbar-static-top">
+			<!-- <div class="navbar navbar-inverse navbar-fixed-top"> -->
+			<div class="navbar-inner">
+
+				<div class="container-fluid">
+
+					<!-- 					<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button> -->
+
+					<a class="brand" href="#">ESWebActivation</a>
+					<div class="nav-collapse collapse">
+						<p class="navbar-text pull-right">
+							Benvenuto <a href="#" class="navbar-link"> <h:outputText value="#{beanMenu.currentUser.nomeVisualizzato }"></h:outputText>
+							</a>
+						</p>
+
+
+						<!-- 						<ul class="nav pull-right">
+							<li>
+								Benvenuto 
+								<a href="#" class="navbar-link dropdown-toggle" data-toggle="dropdown">
+									<h:outputText value="#{beanMenu.currentUser.nomeVisualizzato }"></h:outputText>
+								</a>
+								<ul class="dropdown-menu">
+									<li>
+										<a href="#">Profilo</a>
+									</li>
+
+									<li class="divider"></li>
+									<li>
+										<a href="#">Esci</a>
+									</li>
+								</ul>
+							</li>
+						</ul> -->
+
+
+						<ul class="nav">
+							<!-- <li class="active"> -->
+							<li class="#{beanMenu.menu eq 'dashboard' ? 'active' : '' }">
+								<!-- <a href="../dashboard">Cruscotto</a> -->
+								<h:commandLink value="" action="#{beanMenu.actionGo }">
+									<i class="icon-home"></i>
+									<f:setPropertyActionListener target="#{beanMenu.menu }" value="dashboard"></f:setPropertyActionListener>
+									<h:outputText value=" Diario"></h:outputText>
+								</h:commandLink>
+							</li>
+							<li class="#{beanMenu.menu eq 'clienti' ? 'active' : '' }">
+								<!-- <a href="../clienti">Clienti</a> -->
+								<h:commandLink value="" action="#{beanMenu.actionGo }">
+									<i class="icon-user"></i>
+									<f:setPropertyActionListener target="#{beanMenu.menu }" value="clienti"></f:setPropertyActionListener>
+									<h:outputText value=" Clienti"></h:outputText>
+								</h:commandLink>
+							</li>
+							<li class="#{beanMenu.menu eq 'contratti' ? 'active' : '' }">
+								<!-- <a href="../contratti">Contratti</a> -->
+								<h:commandLink value="" action="#{beanMenu.actionGo }">
+									<i class="icon-time"></i>
+									<f:setPropertyActionListener target="#{beanMenu.menu }" value="contratti"></f:setPropertyActionListener>
+									<h:outputText value=" Contratti"></h:outputText>
+								</h:commandLink>
+							</li>
+							<li class="#{beanMenu.menu eq 'consumi' ? 'active' : '' }">
+								<h:commandLink value="" action="#{beanMenu.actionGo }">
+									<i class="icon-tasks"></i>
+									<f:setPropertyActionListener target="#{beanMenu.menu }" value="consumi"></f:setPropertyActionListener>
+									<h:outputText value=" Consumi"></h:outputText>
+								</h:commandLink>
+							</li>
+							<li class="#{beanMenu.menu eq 'licenze' ? 'active' : '' }">
+								<h:commandLink value="" action="#{beanMenu.actionGo }">
+									<i class="icon-certificate"></i>
+									<f:setPropertyActionListener target="#{beanMenu.menu }" value="licenze"></f:setPropertyActionListener>
+									<h:outputText value=" Licenze"></h:outputText>
+								</h:commandLink>
+							</li>
+
+							<li class="#{beanMenu.menu eq 'postazioni' ? 'active' : '' }">
+								<h:commandLink value="" action="#{beanMenu.actionGo }">
+									<i class="icon-hdd"></i>
+									<f:setPropertyActionListener target="#{beanMenu.menu }" value="postazioni"></f:setPropertyActionListener>
+									<h:outputText value=" Postazioni"></h:outputText>
+								</h:commandLink>
+							</li>
+
+							<!-- 							<li class="#{beanMenu.menu eq 'linee' ? 'active' : '' }">
+								<h:commandLink value="Linee" action="#{beanMenu.actionGo }">
+									<f:setPropertyActionListener target="#{beanMenu.menu }" value="linee"></f:setPropertyActionListener>
+								</h:commandLink>
+							</li>
+							<li class="#{beanMenu.menu eq 'moduli' ? 'active' : '' }">
+								<h:commandLink value="Moduli" action="#{beanMenu.actionGo }">
+									<f:setPropertyActionListener target="#{beanMenu.menu }" value="moduli"></f:setPropertyActionListener>
+								</h:commandLink>
+							</li> -->
+
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-wrench	"></i> <h:outputText value=" Amministrazione"></h:outputText> <!-- Amministrazione <b class="caret"></b> -->
+								</a>
+								<ul class="dropdown-menu">
+									<li class="#{beanMenu.menu eq 'linee' ? 'active' : '' }">
+										<h:commandLink value="Linee" action="#{beanMenu.actionGo }">
+											<f:setPropertyActionListener target="#{beanMenu.menu }" value="linee"></f:setPropertyActionListener>
+										</h:commandLink>
+									</li>
+									<li class="#{beanMenu.menu eq 'moduli' ? 'active' : '' }">
+										<h:commandLink value="Moduli" action="#{beanMenu.actionGo }">
+											<f:setPropertyActionListener target="#{beanMenu.menu }" value="moduli"></f:setPropertyActionListener>
+										</h:commandLink>
+									</li>
+
+									<li class="divider"></li>
+									<li>
+										<a href="#">Utenti</a>
+									</li>
+									<li>
+										<a href="#">Gruppi</a>
+									</li>
+
+									<li class="divider"></li>
+									<li class="disabled">
+										<a href="#">Rivenditori</a>
+									</li>
+								</ul>
+							</li>
+
+						</ul>
+					</div>
+					<!--/.nav-collapse -->
+				</div>
+
+			</div>
+		</div>
+
+	</ui:composition>
+</body>
+</html>
+

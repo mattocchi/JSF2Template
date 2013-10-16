@@ -1,0 +1,52 @@
+.testoRosso {
+	color: red;
+}
+
+.testoVerde {
+	color: green;
+}
+
+.width100p {
+	width: 100%;
+}
+
+.testoPiccolo {
+	/* font-size: 80%; */
+	color: gray;
+}
+
+.ui-datatable tr.ui-datatable-even:hover,.ui-datatable tr.ui-datatable-odd:hover
+	{
+	/* background: #E8E8E8; */
+	background: #CCCCFF;
+}
+
+.ui-treetable tr:hover {
+	/* background: #E8E8E8; */
+	background: #CCCCFF;
+}
+
+.genericImage {
+	
+}
+
+.bold {
+	font-weight: bold;
+}
+
+ul.NoBullet {
+	list-style-type: none
+}
+
+.verticalAlign {
+	vertical-align: top;
+}
+
+
+
+
+
+body {
+	background-color: #E3E5EC	
+}
+

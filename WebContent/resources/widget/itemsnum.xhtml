@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" xmlns:composite="http://java.sun.com/jsf/composite">
+
+<composite:interface>
+	<composite:attribute name="backbean" type="it.attocchi.studio74.online.jsf.PageBaseListS74" required="true" />
+	<!-- <composite:attribute name="filter" type="it.attocchi.jpa2.JPAEntityFilter" required="true" /> -->
+	<!--
+	<composite:attribute name="actionPageNext" method-signature="java.lang.String action()" />
+	<composite:attribute name="actionPagePrev" method-signature="java.lang.String action()" />
+	-->
+</composite:interface>
+
+<composite:implementation>
+
+	<h:panelGroup rendered="#{cc.attrs.backbean.filtro.limit > 0 and cc.attrs.backbean.count > cc.attrs.backbean.filtro.limit }">
+		<h:outputText value="#{cc.attrs.backbean.filtro.pageNumber * cc.attrs.backbean.filtro.limit + 1}"></h:outputText>
+		<h:outputText value=" - "></h:outputText>
+		<h:outputText
+			value="#{cc.attrs.backbean.count > cc.attrs.backbean.filtro.limit ? cc.attrs.backbean.filtro.pageNumber * cc.attrs.backbean.filtro.limit + cc.attrs.backbean.filtro.limit : cc.attrs.backbean.count }"></h:outputText>
+		<h:outputText value=" di "></h:outputText>
+		<h:outputText value="#{cc.attrs.backbean.count }"></h:outputText>
+	</h:panelGroup>
+	
+	<h:panelGroup rendered="#{cc.attrs.backbean.filtro.limit le 0 or cc.attrs.backbean.count le cc.attrs.backbean.filtro.limit }">
+		<h:outputText value="#{cc.attrs.backbean.count }"></h:outputText>
+	</h:panelGroup>
+
+</composite:implementation>
+
+
+</html>

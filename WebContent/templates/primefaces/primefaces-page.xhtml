@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<head>
+</head>
+<body>
+	<ui:composition template="/templates/primefaces/primefaces.xhtml">
+
+		<ui:define name="body">
+
+			<!-- a main form that not prepend jsf prefix on items id -->
+			<!-- <f:ajax render="mainForm"> -->
+			<h:form id="mainFormP" prependId="false">
+
+				<ui:insert name="menuP">
+					<ui:include src="/templates/primefaces/primefaces-menu.xhtml" />
+				</ui:insert>
+
+				<!--
+				<script>
+				    jsf.ajax.addOnEvent(function(data) {
+				        var ajaxstatus = data.status; // Can be "begin", "complete" and "success"
+				        var ajaxloader = document.getElementById("ajaxloader");
+				
+				        switch (ajaxstatus) {
+				            case "begin": // This is called right before ajax request is been sent.
+				                ajaxloader.style.display = 'block';
+				                break;
+				
+				            case "complete": // This is called right after ajax response is received.
+				                ajaxloader.style.display = 'none';
+				                break;
+				
+				            case "success": // This is called when ajax response is successfully processed.
+				                // NOOP.
+				                break;
+				        }
+				    });
+				</script>
+				
+				<h:graphicImage id="ajaxloader" library="images" name="circle-ajax-loader.gif" style="display: none;"></h:graphicImage>
+				-->
+
+				<ui:insert name="contentP">Default contentP</ui:insert>
+
+			</h:form>
+			<!-- </f:ajax> -->
+		</ui:define>
+
+	</ui:composition>
+</body>
+</html>
+
