@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
+         	
+	<display-name>KatiaServer</display-name>
+	<session-config>
+		<session-timeout>30</session-timeout>
+	</session-config>
+
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+<!-- 	<context-param>
+		<param-name>javax.faces.STATE_SAVING_METHOD</param-name>
+		<param-value>client</param-value>
+	</context-param>
+	<context-param>
+		<description>
+           Use this context parameter to enable compression in MyFaces version 1.1.4 and later.
+       </description>
+		<param-name>org.apache.myfaces.COMPRESS_STATE_IN_CLIENT</param-name>
+		<param-value>true</param-value>
+	</context-param>
+	<context-param>
+		<description>
+            Set this flag to true if you want the JavaServer Faces Reference 
+            Implementation to validate the XML in your configuration files 
+            against the DTD.  Default value is false.
+        </description>
+		<param-name>com.sun.faces.validateXml</param-name>
+		<param-value>true</param-value>
+	</context-param>
+	<context-param>
+		<description>Set this flag to true if you want the JavaServer Faces 
+            Reference Implementation to verify that all of the application
+            objects you have configured (components, converters, renderers, 
+            and validators) can be successfully created.
+        Default value is false.</description>
+		<param-name>com.sun.faces.verifyObjects</param-name>
+		<param-value>false</param-value>
+	</context-param>
+	<context-param>
+		<description>If true, a javascript function will be rendered that is able to restore the
+            former vertical scroll on every request. Convenient feature if you have pages
+            with long lists and you do not want the browser page to always jump to the top
+            if you trigger a link or button action that stays on the same page.
+        Default: "false"</description>
+		<param-name>org.apache.myfaces.AUTO_SCROLL</param-name>
+		<param-value>false</param-value>
+	</context-param>
+	 -->
+	<!-- RIMOSSO SOAP
+	<listener>
+		<listener-class>com.sun.xml.ws.transport.http.servlet.WSServletContextListener</listener-class>
+	</listener>
+	-->
+	<servlet>
+		<servlet-name>Faces Servlet</servlet-name>
+		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>*.jspx</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>*.xhtml</url-pattern>
+	</servlet-mapping>
+	
+<context-param>
+    <param-name>javax.faces.DISABLE_FACELET_JSF_VIEWHANDLER</param-name>
+    <param-value>true</param-value>
+</context-param>
+	
+<!-- 	<listener>
+		<listener-class>com.sun.faces.config.ConfigureListener</listener-class>
+	</listener> -->
+<!-- 	<context-param>
+		<param-name>javax.faces.PROJECT_STAGE</param-name>
+		<param-value>Development</param-value>
+	</context-param>
+	<context-param>
+		<param-name>javax.faces.DEFAULT_SUFFIX</param-name>
+		<param-value>.xhtml</param-value>
+	</context-param>
+	<context-param>
+		<param-name>javax.faces.FACELETS_SKIP_COMMENTS</param-name>
+		<param-value>true</param-value>
+	</context-param> -->
+
+<!--     <context-param>
+        <param-name>javax.faces.DEFAULT_SUFFIX</param-name>
+        <param-value>.jspx</param-value>
+    </context-param>
+    <context-param>
+        <param-name>facelets.VIEW_MAPPINGS</param-name>
+        <param-value>*.xhtml</param-value>
+    </context-param>
+    <context-param>
+        <param-name>facelets.FACELETS_SUFFIX</param-name>
+        <param-value>*.xhtml</param-value>
+    </context-param> -->
+    
+<!-- 
+	<filter>
+		<description>
+            Set the size limit for uploaded files.
+            Format: 10 - 10 bytes
+            10k - 10 KB
+            10m - 10 MB
+            1g - 1 GB            
+        </description>
+		<filter-name>MyFacesExtensionsFilter</filter-name>
+		<filter-class>org.apache.myfaces.webapp.filter.ExtensionsFilter</filter-class>
+		<init-param>
+			<param-name>maxFileSize</param-name>
+			<param-value>50m</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>MyFacesExtensionsFilter</filter-name>
+		<servlet-name>Faces Servlet</servlet-name>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>MyFacesExtensionsFilter</filter-name>
+		<url-pattern>/faces/myFacesExtensionResource/*</url-pattern>
+	</filter-mapping>
+ -->
+<!-- 	<context-param>
+		<param-name>org.richfaces.SKIN</param-name>
+		<param-value>blueSky</param-value>
+	</context-param> -->
+
+	<!-- <filter>
+		<display-name>RichFaces Filter</display-name>
+		<filter-name>richfaces</filter-name>
+		<filter-class>org.ajax4jsf.Filter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>richfaces</filter-name>
+		<url-pattern>/admin/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+		<dispatcher>INCLUDE</dispatcher>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>richfaces</filter-name>
+		<url-pattern>/conf/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+		<dispatcher>INCLUDE</dispatcher>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>richfaces</filter-name>
+		<url-pattern>/details/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+		<dispatcher>INCLUDE</dispatcher>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>richfaces</filter-name>
+		<url-pattern>/serviceOrders/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+		<dispatcher>INCLUDE</dispatcher>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>richfaces</filter-name>
+		<url-pattern>/statistics/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+		<dispatcher>INCLUDE</dispatcher>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>richfaces</filter-name>
+		<url-pattern>/scheduling/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+		<dispatcher>INCLUDE</dispatcher>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>richfaces</filter-name>
+		<url-pattern>/notes/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+		<dispatcher>INCLUDE</dispatcher>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>richfaces</filter-name>
+		<url-pattern>/checks/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+		<dispatcher>INCLUDE</dispatcher>
+	</filter-mapping> -->
+
+
+	<!-- Mirco -->
+	<!-- NON POSSO MAPPARE TUTTO altrimenti i REPORTS hanno strem occupato -->
+	<!--
+		<filter-mapping>
+		<filter-name>richfaces</filter-name>
+		<servlet-name>Faces Servlet</servlet-name>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+		<dispatcher>INCLUDE</dispatcher>
+		</filter-mapping>
+	-->
+
+<!-- 	<error-page>
+		<error-code>403</error-code>
+		<location>/notAuthorized.jsp</location>
+	</error-page> -->
+
+	
+
+	
+
+	
+			
+</web-app>
